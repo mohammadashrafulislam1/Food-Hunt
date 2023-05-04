@@ -1,11 +1,15 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaBeer, FaEye, FaEyeSlash, FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState();
     const [show, setShow] = useState();
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
+    const from = location.state?.from?.pathname || '/';
     const {signIn, handleLoginWithGoogle, handleLoginWithGithub} = useContext(AuthContext)
     const handleLogIn = event =>{
         event.preventDefault();
@@ -18,11 +22,12 @@ const Login = () => {
         .then(result =>{
           const createdUser = result.user;
           console.log(createdUser)
+          navigate(from, {replace:true})
     })
     .catch((error) => {
       setError(error.message);
     });
-    }
+    };
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">

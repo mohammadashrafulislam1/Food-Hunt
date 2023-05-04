@@ -14,6 +14,7 @@ import BrefPage from './Pages/BrefPage/BrefPage';
 import Details from './layout/Details/Details';
 import ErrorPage from './ErrorPage';
 import Blog from './Pages/Blog/Blog';
+import PrivateRoute from './Private/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -35,12 +36,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/chef/:id',
-        element:<BrefPage></BrefPage>,
+        element:<PrivateRoute><BrefPage></BrefPage></PrivateRoute>,
         loader:({params}) => fetch(`https://food-hunt-server-mohammadashrafulislam1.vercel.app/chef/${params.id}`)
       },
       {
         path:'/recipes/:id/:id',
-        element:<Details></Details>,
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
         loader:({params})=> fetch(`https://food-hunt-server-mohammadashrafulislam1.vercel.app/recipes/${params.id}/${params.id}`)
       },
       {
