@@ -13,6 +13,7 @@ import Register from './Login/Register';
 import BrefPage from './Pages/BrefPage/BrefPage';
 import Details from './layout/Details/Details';
 import ErrorPage from './ErrorPage';
+import Blog from './Pages/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         path:'/recipes/:id/:id',
         element:<Details></Details>,
         loader:({params})=> fetch(`https://food-hunt-server-mohammadashrafulislam1.vercel.app/recipes/${params.id}/${params.id}`)
+      },
+      {
+        path:'/blogs',
+        element:<Blog></Blog>
       }
     ]
   },

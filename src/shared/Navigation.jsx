@@ -17,7 +17,7 @@ const Navigation = () => {
         <li><Link to='/login'>Login</Link ></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Food Hunt</a>
+    <Link className="btn btn-ghost normal-case text-xl" to='/'>Food Hunt</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
