@@ -2,6 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
+    
         <div className='lg:m-40 m-3'>
      <div className='border border-2 lg:p-16 p-3 mt-3'>
         <h1 className='text-3xl'>Tell us the differences between uncontrolled and controlled components.</h1><hr /> <br />
