@@ -12,11 +12,13 @@ import Login from './Login/Login';
 import Register from './Login/Register';
 import BrefPage from './Pages/BrefPage/BrefPage';
 import Details from './layout/Details/Details';
+import ErrorPage from './ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:'/',
