@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaBookmark } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
 
 const RecipesLayout = ({r}) => {
     const {recipe_name, img, id, ingredients, method, ratings, chef_id} =r;
+    const [added, setAdded] = useState();
     const handleBook =()=>{
-     toast("Added to bookmark")
+      alert('Added to BookMark')
+      setAdded(true)
     }
     return (
         <div>
@@ -15,9 +16,8 @@ const RecipesLayout = ({r}) => {
   <div className="card-body">
     <h2 className="card-title">{recipe_name}</h2>
     <div className="card-actions justify-between items-center">
-    <button onClick={handleBook}>
+    <button className='btn' disabled={added} onClick={handleBook} >
       <FaBookmark></FaBookmark>
-      <ToastContainer></ToastContainer>
     </button>
      <Link to={`/recipes/${chef_id}/${id}`}><button className="btn btn-primary">View More</button></Link>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import RecipesLayout from '../../layout/Recipes/RecipesLayout';
+import { ToastContainer } from 'react-toastify';
 
 const BrefPage = () => {
     const chefDetails =useLoaderData();
@@ -35,7 +36,7 @@ const BrefPage = () => {
     recipes?.map(r => <RecipesLayout key={r.id} r={r}></RecipesLayout>)
   }
   </div>
-  </>
+    </>
     );
 };
 
